@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran Character Analyzer</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.1em; opacity: 0.9; }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 30px;
+        }
+        
+        .input-section, .analysis-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 300px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.5em;
+            font-family: 'Scheherazade', 'Amiri', serif;
+            direction: rtl;
+            text-align: right;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .category-filter {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 12px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+        
+        .category-filter:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .category-filter input[type="checkbox"] {
+            cursor: pointer;
+        }
+        
+        .category-filter.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .stat-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        
+        .results-table th,
+        .results-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .results-table th {
+            background: #f1f3f5;
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .results-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .char-display {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2c3e50;
+            font-family: 'Scheherazade', 'Amiri', serif;
+        }
+        
+        .category-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #495057;
+        }
+        
+        .not-in-quran {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .not-in-quran h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .char-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .char-item {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .char-item .char {
+            font-size: 1.5em;
+            font-weight: bold;
+            font-family: 'Scheherazade', 'Amiri', serif;
+        }
+        
+        .char-item .unicode {
+            font-size: 0.8em;
+            color: #6c757d;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .char-item .count {
+            background: #667eea;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.8em;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+        }
+        
+        .error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🕌 Quran Character Analyzer</h1>
+            <p>Analyze Arabic text against Quran Indo-Pak character set</p>
+        </div>
+        
+        <div class="main-content">
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="card">
+                    <h2>📝 Input Text</h2>
+                    <textarea id="inputText" placeholder="Paste Arabic text here to analyze...
+مثال: بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ"></textarea>
+                    
+                    <div class="actions">
+                        <button class="btn btn-primary" onclick="analyzeText()">🔍 Analyze Text</button>
+                        <button class="btn btn-secondary" onclick="clearText()">🗑️ Clear</button>
+                        <button class="btn btn-secondary" onclick="loadSample()">📄 Load Sample</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2>🎯 Category Filters</h2>
+                    <p style="color: #6c757d; font-size: 0.9em; margin-bottom: 15px;">
+                        Select which categories to check in the analysis
+                    </p>
+                    <div id="categoryFilters" class="category-filters"></div>
+                </div>
+            </div>
+            
+            <!-- Analysis Section -->
+            <div class="analysis-section">
+                <div class="card">
+                    <h2>📊 Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value" id="totalChars">0</div>
+                            <div class="stat-label">Total Characters</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="uniqueChars">0</div>
+                            <div class="stat-label">Unique Characters</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="quranChars">0</div>
+                            <div class="stat-label">In Quran Set</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="nonQuranChars">0</div>
+                            <div class="stat-label">Not in Quran</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2>✓ Found Characters</h2>
+                    <div id="foundCharacters">
+                        <p style="color: #6c757d; text-align: center; padding: 20px;">
+                            Paste text and click "Analyze" to see results
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card" id="notInQuranSection" style="display: none;">
+                    <div class="not-in-quran">
+                        <h3>⚠️ Characters NOT in Quran Indo-Pak Set</h3>
+                        <div id="notInQuranList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let quranCharacters = {};
+        let characterLookup = {};
+        let selectedCategories = new Set();
+        
+        // Load the characters data
+        async function loadCharacterData() {
+            try {
+                const response = await fetch('characters_data.json');
+                if (!response.ok) throw new Error('Failed to load character data');
+                
+                quranCharacters = await response.json();
+                
+                // Create a lookup map for quick searching
+                for (const [category, chars] of Object.entries(quranCharacters)) {
+                    chars.forEach(charData => {
+                        characterLookup[charData.char] = {
+                            ...charData,
+                            category: category
+                        };
+                    });
+                }
+                
+                // Initialize category filters
+                initializeCategoryFilters();
+                
+                console.log(`Loaded ${Object.keys(characterLookup).length} characters from Quran set`);
+            } catch (error) {
+                console.error('Error loading character data:', error);
+                document.querySelector('.main-content').innerHTML = `
+                    <div class="error">
+                        <strong>Error:</strong> Could not load character data. 
+                        Make sure 'characters_data.json' is in the same folder as this HTML file.
+                    </div>
+                `;
+            }
+        }
+        
+        // Initialize category filter checkboxes
+        function initializeCategoryFilters() {
+            const container = document.getElementById('categoryFilters');
+            
+            // Select all by default
+            for (const category of Object.keys(quranCharacters)) {
+                selectedCategories.add(category);
+                
+                const label = document.createElement('label');
+                label.className = 'category-filter active';
+                label.innerHTML = `
+                    <input type="checkbox" checked onchange="toggleCategory('${category}', this)">
+                    <span>${category}</span>
+                `;
+                container.appendChild(label);
+            }
+        }
+        
+        // Toggle category selection
+        function toggleCategory(category, checkbox) {
+            const label = checkbox.parentElement;
+            
+            if (checkbox.checked) {
+                selectedCategories.add(category);
+                label.classList.add('active');
+            } else {
+                selectedCategories.delete(category);
+                label.classList.remove('active');
+            }
+            
+            // Re-analyze if there's text
+            const text = document.getElementById('inputText').value;
+            if (text.trim()) {
+                analyzeText();
+            }
+        }
+        
+        // Analyze the input text
+        function analyzeText() {
+            const text = document.getElementById('inputText').value;
+            
+            if (!text.trim()) {
+                alert('Please enter some text to analyze');
+                return;
+            }
+            
+            // Count character occurrences
+            const charCounts = {};
+            for (const char of text) {
+                charCounts[char] = (charCounts[char] || 0) + 1;
+            }
+            
+            // Separate into Quran and non-Quran characters
+            const foundInQuran = [];
+            const notInQuran = [];
+            
+            for (const [char, count] of Object.entries(charCounts)) {
+                const charInfo = characterLookup[char];
+                
+                if (charInfo) {
+                    // Check if character's category is selected
+                    if (selectedCategories.has(charInfo.category)) {
+                        foundInQuran.push({
+                            char: char,
+                            count: count,
+                            ...charInfo
+                        });
+                    }
+                } else {
+                    notInQuran.push({
+                        char: char,
+                        count: count,
+                        unicode: `U+${char.charCodeAt(0).toString(16).toUpperCase().padStart(4, '0')}`
+                    });
+                }
+            }
+            
+            // Update statistics
+            document.getElementById('totalChars').textContent = text.length;
+            document.getElementById('uniqueChars').textContent = Object.keys(charCounts).length;
+            document.getElementById('quranChars').textContent = foundInQuran.length;
+            document.getElementById('nonQuranChars').textContent = notInQuran.length;
+            
+            // Display found characters
+            displayFoundCharacters(foundInQuran);
+            
+            // Display non-Quran characters
+            if (notInQuran.length > 0) {
+                displayNotInQuran(notInQuran);
+            } else {
+                document.getElementById('notInQuranSection').style.display = 'none';
+            }
+        }
+        
+        // Display found characters in a table
+        function displayFoundCharacters(characters) {
+            const container = document.getElementById('foundCharacters');
+            
+            if (characters.length === 0) {
+                container.innerHTML = `
+                    <p style="color: #6c757d; text-align: center; padding: 20px;">
+                        No characters from selected categories found in the text.
+                    </p>
+                `;
+                return;
+            }
+            
+            // Sort by frequency
+            characters.sort((a, b) => b.count - a.count);
+            
+            let html = `
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Character</th>
+                            <th>Unicode</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            for (const char of characters) {
+                html += `
+                    <tr>
+                        <td><span class="char-display">${char.char === ' ' ? '␣' : char.char}</span></td>
+                        <td><code>${char.unicode}</code></td>
+                        <td>${char.name}</td>
+                        <td><span class="category-badge">${char.category}</span></td>
+                        <td><strong>${char.count}</strong></td>
+                    </tr>
+                `;
+            }
+            
+            html += '</tbody></table>';
+            container.innerHTML = html;
+        }
+        
+        // Display characters not in Quran set
+        function displayNotInQuran(characters) {
+            const section = document.getElementById('notInQuranSection');
+            const container = document.getElementById('notInQuranList');
+            
+            section.style.display = 'block';
+            
+            let html = '<div class="char-list">';
+            
+            for (const char of characters) {
+                html += `
+                    <div class="char-item">
+                        <span class="char">${char.char === ' ' ? '␣' : char.char}</span>
+                        <span class="unicode">${char.unicode}</span>
+                        <span class="count">${char.count}×</span>
+                    </div>
+                `;
+            }
+            
+            html += '</div>';
+            container.innerHTML = html;
+        }
+        
+        // Clear text
+        function clearText() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('totalChars').textContent = '0';
+            document.getElementById('uniqueChars').textContent = '0';
+            document.getElementById('quranChars').textContent = '0';
+            document.getElementById('nonQuranChars').textContent = '0';
+            document.getElementById('foundCharacters').innerHTML = `
+                <p style="color: #6c757d; text-align: center; padding: 20px;">
+                    Paste text and click "Analyze" to see results
+                </p>
+            `;
+            document.getElementById('notInQuranSection').style.display = 'none';
+        }
+        
+        // Load sample text
+        function loadSample() {
+            document.getElementById('inputText').value = 'بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ ۝\nاَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَ ۝١ۙ\nالرَّحْمٰنِ الرَّحِيْمِ ۝٢ۙ\nمٰلِكِ يَوْمِ الدِّيْنِ ۝٣ؕ\nاِيَّاكَ نَعْبُدُ وَاِيَّاكَ نَسْتَعِيْنُ ۝٤ؕ';
+            analyzeText();
+        }
+        
+        // Initialize on page load
+        window.onload = function() {
+            loadCharacterData();
+        };
+    </script>
+</body>
+</html>
