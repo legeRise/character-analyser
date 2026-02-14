@@ -283,6 +283,66 @@
             flex-wrap: wrap;
         }
         
+        .highlighted-text {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            font-size: 1.5em;
+            font-family: 'Scheherazade', 'Amiri', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .highlight {
+            padding: 2px 0;
+            border-radius: 3px;
+            transition: all 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .highlight:hover {
+            transform: scale(1.2);
+            z-index: 10;
+        }
+        
+        .highlight-arabic-letters { background-color: #e3f2fd; border-bottom: 2px solid #2196F3; }
+        .highlight-harakat { background-color: #f3e5f5; border-bottom: 2px solid #9c27b0; }
+        .highlight-arabic-indic-digits { background-color: #e8f5e9; border-bottom: 2px solid #4caf50; }
+        .highlight-madd-signs { background-color: #fff3e0; border-bottom: 2px solid #ff9800; }
+        .highlight-wuqoof { background-color: #fce4ec; border-bottom: 2px solid #e91e63; }
+        .highlight-other { background-color: #f1f8e9; border-bottom: 2px solid #8bc34a; }
+        .highlight-not-in-quran { background-color: #ffebee; border-bottom: 2px solid #f44336; font-weight: bold; }
+        
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.85em;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
         @media (max-width: 1024px) {
             .main-content {
                 grid-template-columns: 1fr;
@@ -330,6 +390,48 @@
             
             <!-- Analysis Section -->
             <div class="analysis-section">
+                <div class="card">
+                    <h2>🎨 Highlighted Text</h2>
+                    <p style="color: #6c757d; font-size: 0.9em; margin-bottom: 10px;">
+                        Characters are color-coded by category. Hover to see details.
+                    </p>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color highlight-arabic-letters"></div>
+                            <span>Arabic Letters</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color highlight-harakat"></div>
+                            <span>Harakat</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color highlight-arabic-indic-digits"></div>
+                            <span>Digits</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color highlight-madd-signs"></div>
+                            <span>Madd Signs</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color highlight-wuqoof"></div>
+                            <span>Wuqoof</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color highlight-other"></div>
+                            <span>Other/Special</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color highlight-not-in-quran"></div>
+                            <span>Not in Quran</span>
+                        </div>
+                    </div>
+                    <div id="highlightedText" class="highlighted-text">
+                        <p style="color: #6c757d; text-align: center; padding: 20px;">
+                            Text highlighting will appear here after analysis
+                        </p>
+                    </div>
+                </div>
+                
                 <div class="card">
                     <h2>📊 Statistics</h2>
                     <div class="stats-grid">
@@ -492,6 +594,9 @@
             document.getElementById('quranChars').textContent = foundInQuran.length;
             document.getElementById('nonQuranChars').textContent = notInQuran.length;
             
+            // Highlight the text
+            highlightText(text);
+            
             // Display found characters
             displayFoundCharacters(foundInQuran);
             
@@ -501,6 +606,45 @@
             } else {
                 document.getElementById('notInQuranSection').style.display = 'none';
             }
+        }
+        
+        // Get CSS class for category
+        function getCategoryClass(category) {
+            const normalizedCategory = category.toLowerCase().replace(/[^a-z]/g, '-');
+            
+            if (category.includes('Arabic Letters')) return 'highlight-arabic-letters';
+            if (category.includes('Harakat')) return 'highlight-harakat';
+            if (category.includes('Digit')) return 'highlight-arabic-indic-digits';
+            if (category.includes('Madd')) return 'highlight-madd-signs';
+            if (category.includes('Wuqoof')) return 'highlight-wuqoof';
+            return 'highlight-other';
+        }
+        
+        // Highlight text with character information
+        function highlightText(text) {
+            const container = document.getElementById('highlightedText');
+            let html = '';
+            
+            for (const char of text) {
+                const charInfo = characterLookup[char];
+                
+                if (charInfo && selectedCategories.has(charInfo.category)) {
+                    const cssClass = getCategoryClass(charInfo.category);
+                    const displayChar = char === ' ' ? ' ' : char;
+                    const title = `${charInfo.name}\n${charInfo.unicode}\nCategory: ${charInfo.category}`;
+                    html += `<span class="highlight ${cssClass}" title="${title}">${displayChar}</span>`;
+                } else if (!charInfo) {
+                    const displayChar = char === ' ' ? ' ' : char === '\n' ? '\n' : char;
+                    const unicode = `U+${char.charCodeAt(0).toString(16).toUpperCase().padStart(4, '0')}`;
+                    const title = `NOT IN QURAN SET\n${unicode}`;
+                    html += `<span class="highlight highlight-not-in-quran" title="${title}">${displayChar}</span>`;
+                } else {
+                    // Character in Quran but category not selected - show without highlight
+                    html += char;
+                }
+            }
+            
+            container.innerHTML = html;
         }
         
         // Display found characters in a table
@@ -579,6 +723,11 @@
             document.getElementById('uniqueChars').textContent = '0';
             document.getElementById('quranChars').textContent = '0';
             document.getElementById('nonQuranChars').textContent = '0';
+            document.getElementById('highlightedText').innerHTML = `
+                <p style="color: #6c757d; text-align: center; padding: 20px;">
+                    Text highlighting will appear here after analysis
+                </p>
+            `;
             document.getElementById('foundCharacters').innerHTML = `
                 <p style="color: #6c757d; text-align: center; padding: 20px;">
                     Paste text and click "Analyze" to see results
