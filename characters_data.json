@@ -1,0 +1,866 @@
+{
+  "Arabic Letters": [
+    {
+      "char": "ا",
+      "unicode": "U+0627",
+      "codepoint": 1575,
+      "name": "ARABIC LETTER ALEF",
+      "frequency": 54076,
+      "verse_reference": "1:1",
+      "context": "بِسْمِ اللّٰهِ الر",
+      "context_position": 7
+    },
+    {
+      "char": "ب",
+      "unicode": "U+0628",
+      "codepoint": 1576,
+      "name": "ARABIC LETTER BEH",
+      "frequency": 11491,
+      "verse_reference": "1:1",
+      "context": "بِسْمِ اللّ",
+      "context_position": 0
+    },
+    {
+      "char": "ت",
+      "unicode": "U+062A",
+      "codepoint": 1578,
+      "name": "ARABIC LETTER TEH",
+      "frequency": 10520,
+      "verse_reference": "1:5",
+      "context": "َّاكَ نَسْتَعِيْنُ ۝٤",
+      "context_position": 10
+    },
+    {
+      "char": "ث",
+      "unicode": "U+062B",
+      "codepoint": 1579,
+      "name": "ARABIC LETTER THEH",
+      "frequency": 1414,
+      "verse_reference": "2:17",
+      "context": "مَثَلُهُمْ كَ",
+      "context_position": 2
+    },
+    {
+      "char": "ج",
+      "unicode": "U+062C",
+      "codepoint": 1580,
+      "name": "ARABIC LETTER JEEM",
+      "frequency": 3317,
+      "verse_reference": "2:16",
+      "context": "بِحَتْ تِّجَارَتُهُمْ",
+      "context_position": 10
+    },
+    {
+      "char": "ح",
+      "unicode": "U+062D",
+      "codepoint": 1581,
+      "name": "ARABIC LETTER HAH",
+      "frequency": 4140,
+      "verse_reference": "1:1",
+      "context": "ّٰهِ الرَّحْمٰنِ الرّ",
+      "context_position": 10
+    },
+    {
+      "char": "خ",
+      "unicode": "U+062E",
+      "codepoint": 1582,
+      "name": "ARABIC LETTER KHAH",
+      "frequency": 2497,
+      "verse_reference": "2:4",
+      "context": " وَبِالْاٰخِرَةِ هُمْ",
+      "context_position": 10
+    },
+    {
+      "char": "د",
+      "unicode": "U+062F",
+      "codepoint": 1583,
+      "name": "ARABIC LETTER DAL",
+      "frequency": 5991,
+      "verse_reference": "1:2",
+      "context": "اَلْحَمْدُ لِلّٰهِ ",
+      "context_position": 8
+    },
+    {
+      "char": "ذ",
+      "unicode": "U+0630",
+      "codepoint": 1584,
+      "name": "ARABIC LETTER THAL",
+      "frequency": 4932,
+      "verse_reference": "1:7",
+      "context": "رَاطَ الَّذِيْنَ اَنْ",
+      "context_position": 10
+    },
+    {
+      "char": "ر",
+      "unicode": "U+0631",
+      "codepoint": 1585,
+      "name": "ARABIC LETTER REH",
+      "frequency": 12403,
+      "verse_reference": "1:1",
+      "context": "اللّٰهِ الرَّحْمٰنِ ا",
+      "context_position": 10
+    },
+    {
+      "char": "ز",
+      "unicode": "U+0632",
+      "codepoint": 1586,
+      "name": "ARABIC LETTER ZAIN",
+      "frequency": 1599,
+      "verse_reference": "2:3",
+      "context": "َمِمَّا رَزَقْنٰهُمْ ",
+      "context_position": 10
+    },
+    {
+      "char": "س",
+      "unicode": "U+0633",
+      "codepoint": 1587,
+      "name": "ARABIC LETTER SEEN",
+      "frequency": 6010,
+      "verse_reference": "1:1",
+      "context": "بِسْمِ اللّٰه",
+      "context_position": 2
+    },
+    {
+      "char": "ش",
+      "unicode": "U+0634",
+      "codepoint": 1588,
+      "name": "ARABIC LETTER SHEEN",
+      "frequency": 2124,
+      "verse_reference": "2:7",
+      "context": "ارِهِمْ غِشَاوَةٌؗ وّ",
+      "context_position": 10
+    },
+    {
+      "char": "ص",
+      "unicode": "U+0635",
+      "codepoint": 1589,
+      "name": "ARABIC LETTER SAD",
+      "frequency": 2074,
+      "verse_reference": "1:6",
+      "context": "هْدِنَا الصِّرَاطَ ال",
+      "context_position": 10
+    },
+    {
+      "char": "ض",
+      "unicode": "U+0636",
+      "codepoint": 1590,
+      "name": "ARABIC LETTER DAD",
+      "frequency": 1686,
+      "verse_reference": "1:7",
+      "context": "رِ الْمَغْضُوْبِ عَلَ",
+      "context_position": 10
+    },
+    {
+      "char": "ط",
+      "unicode": "U+0637",
+      "codepoint": 1591,
+      "name": "ARABIC LETTER TAH",
+      "frequency": 1273,
+      "verse_reference": "1:6",
+      "context": "ا الصِّرَاطَ الْمُسْت",
+      "context_position": 10
+    },
+    {
+      "char": "ظ",
+      "unicode": "U+0638",
+      "codepoint": 1592,
+      "name": "ARABIC LETTER ZAH",
+      "frequency": 853,
+      "verse_reference": "2:7",
+      "context": "عَذَابٌ عَظِيْمٌ ۝٧ࣖ",
+      "context_position": 10
+    },
+    {
+      "char": "ع",
+      "unicode": "U+0639",
+      "codepoint": 1593,
+      "name": "ARABIC LETTER AIN",
+      "frequency": 9405,
+      "verse_reference": "1:2",
+      "context": " رَبِّ الْعٰلَمِيْنَ ",
+      "context_position": 10
+    },
+    {
+      "char": "غ",
+      "unicode": "U+063A",
+      "codepoint": 1594,
+      "name": "ARABIC LETTER GHAIN",
+      "frequency": 1221,
+      "verse_reference": "1:7",
+      "context": "ْهِمْ‮٦࣢ۙ غَيْرِ الْم",
+      "context_position": 10
+    },
+    {
+      "char": "ف",
+      "unicode": "U+0641",
+      "codepoint": 1601,
+      "name": "ARABIC LETTER FEH",
+      "frequency": 8747,
+      "verse_reference": "2:2",
+      "context": "رَيْبَۚۖۛ فِيْهِۚۛ هُ",
+      "context_position": 10
+    },
+    {
+      "char": "ق",
+      "unicode": "U+0642",
+      "codepoint": 1602,
+      "name": "ARABIC LETTER QAF",
+      "frequency": 7034,
+      "verse_reference": "1:6",
+      "context": " الْمُسْتَقِيْمَ ۝٥ۙ",
+      "context_position": 10
+    },
+    {
+      "char": "ك",
+      "unicode": "U+0643",
+      "codepoint": 1603,
+      "name": "ARABIC LETTER KAF",
+      "frequency": 10497,
+      "verse_reference": "1:4",
+      "context": "مٰلِكِ يَوْمِ ا",
+      "context_position": 4
+    },
+    {
+      "char": "ل",
+      "unicode": "U+0644",
+      "codepoint": 1604,
+      "name": "ARABIC LETTER LAM",
+      "frequency": 38102,
+      "verse_reference": "1:1",
+      "context": "بِسْمِ اللّٰهِ الرّ",
+      "context_position": 8
+    },
+    {
+      "char": "م",
+      "unicode": "U+0645",
+      "codepoint": 1605,
+      "name": "ARABIC LETTER MEEM",
+      "frequency": 26735,
+      "verse_reference": "1:1",
+      "context": "بِسْمِ اللّٰهِ ",
+      "context_position": 4
+    },
+    {
+      "char": "ن",
+      "unicode": "U+0646",
+      "codepoint": 1606,
+      "name": "ARABIC LETTER NOON",
+      "frequency": 27269,
+      "verse_reference": "1:1",
+      "context": " الرَّحْمٰنِ الرَّحِي",
+      "context_position": 10
+    },
+    {
+      "char": "و",
+      "unicode": "U+0648",
+      "codepoint": 1608,
+      "name": "ARABIC LETTER WAW",
+      "frequency": 25679,
+      "verse_reference": "1:4",
+      "context": "مٰلِكِ يَوْمِ الدِّي",
+      "context_position": 9
+    },
+    {
+      "char": "ه",
+      "unicode": "U+0647",
+      "codepoint": 1607,
+      "name": "ARABIC LETTER HEH",
+      "frequency": 14850,
+      "verse_reference": "1:1",
+      "context": "سْمِ اللّٰهِ الرَّحْم",
+      "context_position": 10
+    },
+    {
+      "char": "ء",
+      "unicode": "U+0621",
+      "codepoint": 1569,
+      "name": "ARABIC LETTER HAMZA",
+      "frequency": 1717,
+      "verse_reference": "2:6",
+      "context": "وْا سَوَا࢜ءٌ عَلَيْهِ",
+      "context_position": 10
+    },
+    {
+      "char": "ى",
+      "unicode": "U+0649",
+      "codepoint": 1609,
+      "name": "ARABIC LETTER ALEF MAKSURA",
+      "frequency": 1066,
+      "verse_reference": "2:5",
+      "context": "اُولٰ࢜ىِٕكَ عَلٰي",
+      "context_position": 6
+    },
+    {
+      "char": "ي",
+      "unicode": "U+064A",
+      "codepoint": 1610,
+      "name": "ARABIC LETTER YEH",
+      "frequency": 24683,
+      "verse_reference": "1:1",
+      "context": "نِ الرَّحِيْمِ ۝",
+      "context_position": 10
+    },
+    {
+      "char": "ة",
+      "unicode": "U+0629",
+      "codepoint": 1577,
+      "name": "ARABIC LETTER TEH MARBUTA",
+      "frequency": 2344,
+      "verse_reference": "2:3",
+      "context": "َ الصَّلٰوةَ وَمِمَّا",
+      "context_position": 10
+    }
+  ],
+  "Harakat (Diacritics)": [
+    {
+      "char": "َ",
+      "unicode": "U+064E",
+      "codepoint": 1614,
+      "name": "ARABIC FATHA",
+      "frequency": 110511,
+      "verse_reference": "1:1",
+      "context": "لّٰهِ الرَّحْمٰنِ الر",
+      "context_position": 10
+    },
+    {
+      "char": "ِ",
+      "unicode": "U+0650",
+      "codepoint": 1616,
+      "name": "ARABIC KASRA",
+      "frequency": 45044,
+      "verse_reference": "1:1",
+      "context": "بِسْمِ اللّٰ",
+      "context_position": 1
+    },
+    {
+      "char": "ُ",
+      "unicode": "U+064F",
+      "codepoint": 1615,
+      "name": "ARABIC DAMMA",
+      "frequency": 36093,
+      "verse_reference": "1:2",
+      "context": "اَلْحَمْدُ لِلّٰهِ ر",
+      "context_position": 9
+    },
+    {
+      "char": "ً",
+      "unicode": "U+064B",
+      "codepoint": 1611,
+      "name": "ARABIC FATHATAN",
+      "frequency": 3723,
+      "verse_reference": "2:2",
+      "context": "يْهِۚۛ هُدًي لِّلْمُت",
+      "context_position": 10
+    },
+    {
+      "char": "ٍ",
+      "unicode": "U+064D",
+      "codepoint": 1613,
+      "name": "ARABIC KASRATAN",
+      "frequency": 2611,
+      "verse_reference": "2:17",
+      "context": "يْ ظُلُمٰتٍ لَّا يُبْ",
+      "context_position": 10
+    },
+    {
+      "char": "ٌ",
+      "unicode": "U+064C",
+      "codepoint": 1612,
+      "name": "ARABIC DAMMATAN",
+      "frequency": 2506,
+      "verse_reference": "2:6",
+      "context": "ْا سَوَا࢜ءٌ عَلَيْهِم",
+      "context_position": 10
+    },
+    {
+      "char": "ٰ",
+      "unicode": "U+0670",
+      "codepoint": 1648,
+      "name": "ARABIC LETTER SUPERSCRIPT ALEF",
+      "frequency": 12596,
+      "verse_reference": "1:1",
+      "context": "ِسْمِ اللّٰهِ الرَّحْ",
+      "context_position": 10
+    },
+    {
+      "char": "ٖ",
+      "unicode": "U+0656",
+      "codepoint": 1622,
+      "name": "ARABIC SUBSCRIPT ALEF",
+      "frequency": 993,
+      "verse_reference": "2:22",
+      "context": "خْرَجَ بِهٖ مِنَ الثّ",
+      "context_position": 10
+    },
+    {
+      "char": "ٗ",
+      "unicode": "U+0657",
+      "codepoint": 1623,
+      "name": "ARABIC INVERTED DAMMA",
+      "frequency": 1257,
+      "verse_reference": "2:17",
+      "context": "َا حَوْلَهٗ ذَهَبَ ال",
+      "context_position": 10
+    },
+    {
+      "char": "ْ",
+      "unicode": "U+0652",
+      "codepoint": 1618,
+      "name": "ARABIC SUKUN",
+      "frequency": 62383,
+      "verse_reference": "1:1",
+      "context": "بِسْمِ اللّٰهِ",
+      "context_position": 3
+    },
+    {
+      "char": "ّ",
+      "unicode": "U+0651",
+      "codepoint": 1617,
+      "name": "ARABIC SHADDA",
+      "frequency": 24730,
+      "verse_reference": "1:1",
+      "context": "بِسْمِ اللّٰهِ الرَّح",
+      "context_position": 10
+    }
+  ],
+  "Arabic-Indic Digits": [
+    {
+      "char": "٠",
+      "unicode": "U+0660",
+      "codepoint": 1632,
+      "name": "ARABIC-INDIC DIGIT ZERO",
+      "frequency": 778,
+      "verse_reference": "2:10",
+      "context": "ِبُوْنَ ۝١٠",
+      "context_position": 10
+    },
+    {
+      "char": "١",
+      "unicode": "U+0661",
+      "codepoint": 1633,
+      "name": "ARABIC-INDIC DIGIT ONE",
+      "frequency": 2548,
+      "verse_reference": "1:2",
+      "context": "لَمِيْنَ ۝١ۙ",
+      "context_position": 10
+    },
+    {
+      "char": "٢",
+      "unicode": "U+0662",
+      "codepoint": 1634,
+      "name": "ARABIC-INDIC DIGIT TWO",
+      "frequency": 1643,
+      "verse_reference": "1:3",
+      "context": "َّحِيْمِ ۝٢ۙ",
+      "context_position": 10
+    },
+    {
+      "char": "٣",
+      "unicode": "U+0663",
+      "codepoint": 1635,
+      "name": "ARABIC-INDIC DIGIT THREE",
+      "frequency": 1347,
+      "verse_reference": "1:4",
+      "context": "لدِّيْنِ ۝٣ؕ",
+      "context_position": 10
+    },
+    {
+      "char": "٤",
+      "unicode": "U+0664",
+      "codepoint": 1636,
+      "name": "ARABIC-INDIC DIGIT FOUR",
+      "frequency": 1244,
+      "verse_reference": "1:5",
+      "context": "تَعِيْنُ ۝٤ؕ",
+      "context_position": 10
+    },
+    {
+      "char": "٥",
+      "unicode": "U+0665",
+      "codepoint": 1637,
+      "name": "ARABIC-INDIC DIGIT FIVE",
+      "frequency": 1139,
+      "verse_reference": "1:6",
+      "context": "تَقِيْمَ ۝٥ۙ",
+      "context_position": 10
+    },
+    {
+      "char": "٦",
+      "unicode": "U+0666",
+      "codepoint": 1638,
+      "name": "ARABIC-INDIC DIGIT SIX",
+      "frequency": 1043,
+      "verse_reference": "1:7",
+      "context": "َلَيْهِمْ‮٦࣢ۙ غَيْرِ ",
+      "context_position": 10
+    },
+    {
+      "char": "٧",
+      "unicode": "U+0667",
+      "codepoint": 1639,
+      "name": "ARABIC-INDIC DIGIT SEVEN",
+      "frequency": 986,
+      "verse_reference": "1:7",
+      "context": "࢜لِّيْنَ ۝٧ࣖ",
+      "context_position": 10
+    },
+    {
+      "char": "٨",
+      "unicode": "U+0668",
+      "codepoint": 1640,
+      "name": "ARABIC-INDIC DIGIT EIGHT",
+      "frequency": 909,
+      "verse_reference": "2:8",
+      "context": "مِنِيْنَ ۝٨ۘ",
+      "context_position": 10
+    },
+    {
+      "char": "٩",
+      "unicode": "U+0669",
+      "codepoint": 1641,
+      "name": "ARABIC-INDIC DIGIT NINE",
+      "frequency": 834,
+      "verse_reference": "2:9",
+      "context": "عُرُوْنَ ۝٩ؕ",
+      "context_position": 10
+    }
+  ],
+  "Madd Signs": [
+    {
+      "char": "ٓ",
+      "unicode": "U+0653",
+      "codepoint": 1619,
+      "name": "ARABIC MADDAH ABOVE",
+      "frequency": 3028,
+      "verse_reference": "2:4",
+      "context": "ْنَ بِمَا͏ٓ اُنْزِلَ ",
+      "context_position": 10,
+      "madd_reason" : "hamza"
+    },
+    {
+      "char": "࢜",
+      "unicode": "U+089C",
+      "codepoint": 2204,
+      "name": "UNKNOWN",
+      "frequency": 2098,
+      "verse_reference": "1:7",
+      "context": "لَا الضَّا࢜لِّيْنَ ۝٧",
+      "context_position": 10,
+      "madd_reason" : "sukun"
+    }
+  ],
+  "Wuqoof (Pause Marks)": [
+    {
+      "char": "ؕ",
+      "unicode": "U+0615",
+      "codepoint": 1557,
+      "name": "ARABIC SMALL HIGH TAH",
+      "frequency": 3540,
+      "verse_reference": "1:4",
+      "context": "دِّيْنِ ۝٣ؕ",
+      "context_position": 10
+    },
+    {
+      "char": "ؗ",
+      "unicode": "U+0617",
+      "codepoint": 1559,
+      "name": "ARABIC SMALL HIGH ZAIN",
+      "frequency": 239,
+      "verse_reference": "2:7",
+      "context": " غِشَاوَةٌؗ وَّلَهُمْ",
+      "context_position": 10
+    },
+    {
+      "char": "ۚ",
+      "unicode": "U+06DA",
+      "codepoint": 1754,
+      "name": "ARABIC SMALL HIGH JEEM",
+      "frequency": 1698,
+      "verse_reference": "2:1",
+      "context": "ال࢜مّ࢜ ۝١ۚ",
+      "context_position": 9
+    },
+    {
+      "char": "ۘ",
+      "unicode": "U+06D8",
+      "codepoint": 1752,
+      "name": "ARABIC SMALL HIGH MEEM INITIAL FORM",
+      "frequency": 88,
+      "verse_reference": "2:8",
+      "context": "ِنِيْنَ ۝٨ۘ",
+      "context_position": 10
+    },
+    {
+      "char": "ۢ",
+      "unicode": "U+06E2",
+      "codepoint": 1762,
+      "name": "ARABIC SMALL HIGH MEEM ISOLATED FORM",
+      "frequency": 492,
+      "verse_reference": "2:10",
+      "context": "اَلِيْمٌ࣢ۙۢ بِمَا كَا",
+      "context_position": 10
+    },
+    {
+      "char": "۝",
+      "unicode": "U+06DD",
+      "codepoint": 1757,
+      "name": "ARABIC END OF AYAH",
+      "frequency": 6236,
+      "verse_reference": "1:1",
+      "context": "رَّحِيْمِ ۝",
+      "context_position": 10
+    }
+  ],
+  "Other/Special Signs": [
+    {
+      "char": "ٱ",
+      "unicode": "U+0671",
+      "codepoint": 1649,
+      "name": "ARABIC LETTER ALEF WASLA",
+      "frequency": 1,
+      "verse_reference": "3:78",
+      "context": "نْ عِنْدِ ٱللَّهِۚ وَ",
+      "context_position": 10
+    },
+    {
+      "char": "ٔ",
+      "unicode": "U+0654",
+      "codepoint": 1620,
+      "name": "ARABIC HAMZA ABOVE",
+      "frequency": 1192,
+      "verse_reference": "2:3",
+      "context": "ِيْنَ يُو͏ٔ͏ْمِنُوْنَ",
+      "context_position": 10
+    },
+    {
+      "char": "ٕ",
+      "unicode": "U+0655",
+      "codepoint": 1621,
+      "name": "ARABIC HAMZA BELOW",
+      "frequency": 714,
+      "verse_reference": "2:5",
+      "context": "اُولٰ࢜ىِٕكَ عَلٰي ",
+      "context_position": 7
+    },
+    {
+      "char": "ࣕ",
+      "unicode": "U+08D5",
+      "codepoint": 2261,
+      "name": "ARABIC SMALL HIGH SAD",
+      "frequency": 168,
+      "verse_reference": "2:16",
+      "context": "بِالْهُدٰيࣕ فَمَا رَب",
+      "context_position": 10
+    },
+    {
+      "char": "ࣖ",
+      "unicode": "U+08D6",
+      "codepoint": 2262,
+      "name": "ARABIC SMALL HIGH AIN",
+      "frequency": 558,
+      "verse_reference": "1:7",
+      "context": "لِّيْنَ ۝٧ࣖ",
+      "context_position": 10
+    },
+    {
+      "char": "ࣗ",
+      "unicode": "U+08D7",
+      "codepoint": 2263,
+      "name": "ARABIC SMALL HIGH QAF",
+      "frequency": 146,
+      "verse_reference": "2:5",
+      "context": "رَّبِّهِمْࣗ وَاُولٰ࢜ى",
+      "context_position": 10
+    },
+    {
+      "char": "ࣙ",
+      "unicode": "U+08D9",
+      "codepoint": 2265,
+      "name": "ARABIC SMALL LOW NOON WITH KASRA",
+      "frequency": 54,
+      "verse_reference": "2:180",
+      "context": "َيْرَاۚۖ اࣙلْوَصِيَّة",
+      "context_position": 10
+    },
+    {
+      "char": "ࣛ",
+      "unicode": "U+08DB",
+      "codepoint": 2267,
+      "name": "ARABIC SMALL HIGH WORD AS-SAJDA",
+      "frequency": 15,
+      "verse_reference": "7:206",
+      "context": "ُوْنَ ۝٢٠٦ࣛࣖ",
+      "context_position": 10
+    },
+    {
+      "char": "ࣝ",
+      "unicode": "U+08DD",
+      "codepoint": 2269,
+      "name": "ARABIC SMALL HIGH WORD SAKTA",
+      "frequency": 8,
+      "verse_reference": "7:23",
+      "context": "َنْفُسَنَاࣝ وَاِنْ لّ",
+      "context_position": 10
+    },
+    {
+      "char": "ࣞ",
+      "unicode": "U+08DE",
+      "codepoint": 2270,
+      "name": "ARABIC SMALL HIGH WORD QIF",
+      "frequency": 129,
+      "verse_reference": "2:83",
+      "context": "َا اللّٰهَࣞ وَبِالْوَ",
+      "context_position": 10
+    },
+    {
+      "char": "ࣟ",
+      "unicode": "U+08DF",
+      "codepoint": 2271,
+      "name": "ARABIC SMALL HIGH WORD WAQFA",
+      "frequency": 21,
+      "verse_reference": "2:196",
+      "context": "اَمِنْتُمْࣟ فَمَنْ تَ",
+      "context_position": 10
+    },
+    {
+      "char": "࣢",
+      "unicode": "U+08E2",
+      "codepoint": 2274,
+      "name": "ARABIC DISPUTED END OF AYAH",
+      "frequency": 118,
+      "verse_reference": "1:7",
+      "context": "لَيْهِمْ‮٦࣢ۙ غَيْرِ ا",
+      "context_position": 10
+    },
+    {
+      "char": "ۖ",
+      "unicode": "U+06D6",
+      "codepoint": 1750,
+      "name": "ARABIC SMALL HIGH LIGATURE SAD WITH LAM WITH ALEF MAKSURA",
+      "frequency": 271,
+      "verse_reference": "2:2",
+      "context": "َا رَيْبَۚۖۛ فِيْهِۚۛ",
+      "context_position": 10
+    },
+    {
+      "char": "ۙ",
+      "unicode": "U+06D9",
+      "codepoint": 1753,
+      "name": "ARABIC SMALL HIGH LAM ALEF",
+      "frequency": 1557,
+      "verse_reference": "1:2",
+      "context": "َمِيْنَ ۝١ۙ",
+      "context_position": 10
+    },
+    {
+      "char": "ۛ",
+      "unicode": "U+06DB",
+      "codepoint": 1755,
+      "name": "ARABIC SMALL HIGH THREE DOTS",
+      "frequency": 68,
+      "verse_reference": "2:2",
+      "context": "ا رَيْبَۚۖۛ فِيْهِۚۛ ",
+      "context_position": 10
+    },
+    {
+      "char": "ۜ",
+      "unicode": "U+06DC",
+      "codepoint": 1756,
+      "name": "ARABIC SMALL HIGH SEEN",
+      "frequency": 4,
+      "verse_reference": "2:245",
+      "context": "ضُ وَيَبْصُۜطُࣕ وَاِل",
+      "context_position": 10
+    },
+    {
+      "char": "۟",
+      "unicode": "U+06DF",
+      "codepoint": 1759,
+      "name": "ARABIC SMALL HIGH ROUNDED ZERO",
+      "frequency": 26,
+      "verse_reference": "3:144",
+      "context": "ُلُؕ اَفَا۟ىِٕنْ مَّا",
+      "context_position": 10
+    },
+    {
+      "char": "ۦ",
+      "unicode": "U+06E6",
+      "codepoint": 1766,
+      "name": "ARABIC SMALL YEH",
+      "frequency": 5,
+      "verse_reference": "7:196",
+      "context": "َّ وَلِيِّۦَ اللّٰهُ ",
+      "context_position": 10
+    },
+    {
+      "char": "ۨ",
+      "unicode": "U+06E8",
+      "codepoint": 1768,
+      "name": "ARABIC SMALL HIGH NOON",
+      "frequency": 1,
+      "verse_reference": "21:88",
+      "context": "ذٰلِكَ نُـْۨجِي الْمُ",
+      "context_position": 10
+    },
+    {
+      "char": "ۭ",
+      "unicode": "U+06ED",
+      "codepoint": 1773,
+      "name": "ARABIC SMALL LOW MEEM",
+      "frequency": 54,
+      "verse_reference": "2:41",
+      "context": "لَ كَافِرٍۭ بِهٖࣕ وَل",
+      "context_position": 10
+    },
+    {
+      "char": "‮",
+      "unicode": "U+202E",
+      "codepoint": 8238,
+      "name": "RIGHT-TO-LEFT OVERRIDE",
+      "frequency": 1,
+      "verse_reference": "1:7",
+      "context": "عَلَيْهِمْ‮٦࣢ۙ غَيْرِ",
+      "context_position": 10
+    },
+    {
+      "char": "ؔ",
+      "unicode": "U+0614",
+      "codepoint": 1556,
+      "name": "ARABIC SIGN TAKHALLUS",
+      "frequency": 45,
+      "verse_reference": "2:120",
+      "context": "ِيْرٍ ۝١٢٠ؔ",
+      "context_position": 10
+    },
+    {
+      "char": " ",
+      "unicode": "U+0020",
+      "codepoint": 32,
+      "name": "SPACE",
+      "frequency": 77433,
+      "verse_reference": "1:1",
+      "context": "بِسْمِ اللّٰهِ ال",
+      "context_position": 6
+    },
+    {
+      "char": "ـ",
+      "unicode": "U+0640",
+      "codepoint": 1600,
+      "name": "ARABIC TATWEEL",
+      "frequency": 268,
+      "verse_reference": "2:31",
+      "context": "َ اَنۢ͏ْبِـُٔوْنِيْ ب",
+      "context_position": 10
+    },
+    {
+      "char": "͏",
+      "unicode": "U+034F",
+      "codepoint": 847,
+      "name": "COMBINING GRAPHEME JOINER",
+      "frequency": 3262,
+      "verse_reference": "2:3",
+      "context": "ذِيْنَ يُو͏ٔ͏ْمِنُوْن",
+      "context_position": 10
+    }
+  ]
+}
